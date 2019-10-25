@@ -22,6 +22,7 @@ public class GetStatusServiceImpl implements GetStatusService {
 
     @Override
     public void getStatus(String partnerId) {
+        //just to show that is possible querying data through these two ways
         getStatusRepository.findByPartnerId(partnerId);
         mongoTemplate.find(Query.query(Criteria.where("partnerId").is(partnerId)), Status.class);
     }
